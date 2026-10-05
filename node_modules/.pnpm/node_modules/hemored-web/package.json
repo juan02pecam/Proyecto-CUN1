@@ -1,0 +1,1 @@
+{"name":"hemored-web","private":true,"scripts":{"dev":"vite","test":"node --import tsx --test src/**/*.test.ts","build":"vite build"},"dependencies":{"@vitejs/plugin-react":"latest","react":"latest","react-dom":"latest","vite":"latest"},"devDependencies":{"tsx":"^4.19.2","typescript":"^5.6.3"}}

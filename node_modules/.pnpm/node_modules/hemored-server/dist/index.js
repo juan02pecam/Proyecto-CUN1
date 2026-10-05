@@ -1,0 +1,3 @@
+import { buildApp } from './interfaces/http.js';
+const app = buildApp();
+app.listen({ port: Number(process.env.PORT || 4000), host: '0.0.0.0' }).then(() => console.log('HemoRed API on http://localhost:4000')).catch(e => { console.error(e); process.exit(1); });

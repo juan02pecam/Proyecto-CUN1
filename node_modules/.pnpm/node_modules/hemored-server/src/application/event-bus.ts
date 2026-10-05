@@ -1,0 +1,2 @@
+import {DomainEvent} from '../domain/contracts.js';
+export class EventBus { private handlers=new Map<string,((event:DomainEvent)=>void)[]>(); private seen=new Set<string>(); private history:DomainEvent[]=[]; subscribe(type:string, handler:(event:DomainEvent)=>void){this.handlers.set(type,[...(this.handlers.get(type)||[]),handler]);} publish(event:DomainEvent){if(this.seen.has(event.id))return;this.seen.add(event.id);this.history.push(event); for(const h of this.handlers.get(event.type)||[])h(event);} list(){return [...this.history].reverse();} }

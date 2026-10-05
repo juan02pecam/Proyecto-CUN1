@@ -1,0 +1,1 @@
+const base=import.meta.env.VITE_API_URL||'http://localhost:4000'; export async function getSummary(){const r=await fetch(base+'/api/dashboard/summary'); return r.json();} export async function getRequests(){const r=await fetch(base+'/api/transfusion-requests'); return r.json();} export async function getEvents(){const r=await fetch(base+'/api/events'); return r.json();}

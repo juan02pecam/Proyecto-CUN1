@@ -1,0 +1,6 @@
+{
+  "name": "hemored",
+  "private": true,
+  "scripts": {"dev": "pnpm --parallel --filter server --filter web dev", "test": "pnpm -r test", "build": "pnpm -r build"},
+  "devDependencies": {"typescript": "^5.6.3"}
+}

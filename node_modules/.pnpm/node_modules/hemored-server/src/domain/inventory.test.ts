@@ -1,0 +1,3 @@
+import {test} from 'node:test'; import assert from 'node:assert/strict'; import {calculateInventorySummary,validateUnit} from './inventory.js';
+test('rejects invalid blood unit values',()=>assert.deepEqual(validateUnit({code:'',bloodGroup:'X' as never,component:'x' as never}),['code','bloodGroup','component','expiresAt']));
+test('excludes expired and inactive units from available inventory',()=>{const units=[{id:'1',code:'A',bloodGroup:'O+' as const,component:'Plasma' as const,volume:1,status:'available' as const,location:'A',expiresAt:'2099-01-01'},{id:'2',code:'B',bloodGroup:'O-' as const,component:'Plasma' as const,volume:1,status:'expired' as const,location:'A',expiresAt:'2099-01-01'}]; assert.equal(calculateInventorySummary(units).total,1);});
