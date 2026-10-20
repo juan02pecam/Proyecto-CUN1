@@ -1,5 +1,10 @@
 packages:
   - server
   - web
+  - shared
+  - app
 allowBuilds:
   esbuild: true
+overrides:
+  react: 19.3.0
+  react-dom: 19.3.0

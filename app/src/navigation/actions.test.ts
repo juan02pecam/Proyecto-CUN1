@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {screenTitle} from './actions.js';
+test('returns a title for each universal screen',()=>{assert.equal(screenTitle('/'),'Resumen general');assert.equal(screenTitle('/inventory'),'Inventario sanguíneo');assert.equal(screenTitle('/requests'),'Solicitudes transfusionales');assert.equal(screenTitle('/donors'),'Red de donantes');});

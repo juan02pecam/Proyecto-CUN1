@@ -22,6 +22,17 @@ pnpm --filter hemored-web dev
 
 Abre `http://localhost:5173`. La API corre en `http://localhost:4000` y usa datos sintéticos en modo demo por defecto.
 
+### Cliente universal Native
+
+También está disponible `app/`, una aplicación Expo + React Native Web que reutiliza la API y funciona en web, Android e iOS:
+
+```powershell
+pnpm --filter hemored-server dev
+pnpm --filter hemored-app web
+```
+
+Abre `http://localhost:8081`. Para teléfono físico, configura `app/.env` con la IP LAN del equipo como `EXPO_PUBLIC_API_URL` y ejecuta `pnpm --filter hemored-app start`.
+
 Para levantar MongoDB local:
 
 ```powershell
@@ -48,3 +59,12 @@ pnpm --filter hemored-web build
 - Diseño responsive con navegación adaptable a móvil.
 
 Los datos del MVP son sintéticos y no deben usarse como sistema clínico productivo sin añadir autenticación, autorización, auditoría regulatoria e interoperabilidad HL7/FHIR.
+
+Para crear un APK instalable directamente en Android:
+
+```powershell
+npx eas-cli login
+pnpm --filter hemored-app build:apk
+```
+
+El perfil `production` genera un AAB para Google Play.

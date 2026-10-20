@@ -1,0 +1,1 @@
+export function screenTitle(path:string){return ({'/':'Resumen general','/inventory':'Inventario sanguíneo','/requests':'Solicitudes transfusionales','/donors':'Red de donantes'} as Record<string,string>)[path]||'HemoRed';}

@@ -1,0 +1,1 @@
+import {ActivityIndicator,Text,View} from 'react-native';export function LoadingState(){return <View style={{padding:40,alignItems:'center'}}><ActivityIndicator color="#EF6470"/><Text style={{marginTop:10,color:'#8290A4'}}>Cargando HemoRed…</Text></View>}

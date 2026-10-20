@@ -1,0 +1,1 @@
+import {useWindowDimensions} from 'react-native'; export function useResponsive(){const{width}=useWindowDimensions();return{width,isMobile:width<650,isTablet:width>=650&&width<1000,isDesktop:width>=1000};}

@@ -1,0 +1,2 @@
+import {test} from 'node:test'; import assert from 'node:assert/strict'; import {routeFor} from './routes.js';
+test('maps universal actions to Expo routes',()=>{assert.equal(routeFor('Resumen'),'/');assert.equal(routeFor('Inventario'),'/inventory');assert.equal(routeFor('Registrar unidad'),'/inventory/new');assert.equal(routeFor('Solicitudes'),'/requests');assert.equal(routeFor('Donantes'),'/donors');});
